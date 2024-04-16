@@ -2,13 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var rxjs_1 = require("rxjs");
 var observable$ = new rxjs_1.Observable(function (observer) {
-    observer.next(10);
-    observer.error('error');
-    observer.next(20);
-    observer.next(30);
+    setTimeout(function () { return observer.next(10); }, 1000);
+    setTimeout(function () { return observer.next(20); }, 2000);
+    setTimeout(function () { return observer.next(40); }, 3000);
 });
-observable$.subscribe({
+var subscription = observable$.subscribe({
     next: function (value) { console.log(value * 2); },
     error: function (err) { console.log(err); },
     complete: function () { }
 });
+setTimeout(function () { return subscription.unsubscribe(); }, 2500);
