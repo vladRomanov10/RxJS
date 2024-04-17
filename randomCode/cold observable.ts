@@ -9,3 +9,22 @@ const observable$ = new Observable(observer => {
 const subscription = observable$.subscribe((value) => {console.log(value)})
 
 setTimeout(() => observable$.subscribe((value) => {console.log(`Second observable ${value}`)}), 1500)
+//----
+function getTitle() {
+    return new Observable(observer => {
+
+        setTimeout(() => {
+            const response = {
+                title: 'Server answer',
+            }
+            observer.next(response)
+            observer.complete()
+            }, 1000)
+    })
+}
+
+getTitle().subscribe({
+    next: (response) => console.log(response),
+    error: (err) => console.log(err),
+    complete: () => console.log('Stream is completed')
+})
