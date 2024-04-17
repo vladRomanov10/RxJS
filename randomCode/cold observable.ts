@@ -15,16 +15,16 @@ function getTitle() {
 
         setTimeout(() => {
             const response = {
-                title: 'Server answer',
+                title: 'Title',
             }
-            observer.next(response)
+            observer.next(response.title)
             observer.complete()
             }, 1000)
     })
 }
 
 getTitle().subscribe({
-    next: (response) => console.log(response),
+    next: (response) => console.log(`Server answer is ${response}`),
     error: (err) => console.log(err),
     complete: () => console.log('Stream is completed')
 })
