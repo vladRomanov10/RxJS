@@ -16,8 +16,8 @@ c.next(7);
 // Константы
 var e = 5;
 var f = 10;
-var g = new rxjs_1.BehaviorSubject(5).asObservable(); // метод .asObservable() делает данные (observable) только читаемыми по подписке
-var h = (0, rxjs_1.of)(10); //функция of делает данные (observable) только читаемыми по подписке
+var g = new rxjs_1.BehaviorSubject(5).asObservable(); // метод .asObservable() делает данные - observable только читаемыми по подписке
+var h = (0, rxjs_1.of)(10); //функция of делает данные - observable только читаемыми по подписке
 //Создание зависимости одних данных от других
 //На чистом TS или JS это сложная конструкция, которую лучше не делать
 //RxJS

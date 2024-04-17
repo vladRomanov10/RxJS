@@ -13,3 +13,4 @@ observable$
         console.log(data);
     }
 });
+//проверка
